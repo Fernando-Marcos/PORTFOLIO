@@ -39,11 +39,12 @@ header {
 /* Barra de navegación - La despego de arriba*/
 .navbar {
   margin-top: 30px;
+  justify-content: flex-end;
 }
 
 .navbar .brand {
   display: flex; /* Uno al lado del otro*/
-  margin: 15px 40px;
+  margin: 15px 20px;
   color: white;
   font-size: 1.8em;
 }
@@ -57,18 +58,18 @@ header {
 .menu ul {
   display: flex; /* Uno al lado del otro*/
   justify-content: flex-end;
-  margin: -50px 20px;
+  margin: -50px 10px;
 }
 
 .menu ul li {
   list-style: none;
-  margin-right: 70px;
+  margin-right: 60px;
 }
 
 .menu ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.3em;
+  font-size: 1.4em;
 }
 
 .menu ul li a:hover {
@@ -101,7 +102,7 @@ header {
 
 .container-info h1 {
   font-size: 5em;
-  margin-left: -100px;
+  margin-left: -94px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   animation: left-move 1s ease-in;
 }
@@ -168,9 +169,10 @@ header .wave {
     margin-left: -5px;
   }
 
-  .navbar .toggle-menu i {
+  /* El Icono de la derecha de la web en versión móvil */
+  .navbar .toggle-menu i { 
     display: block;
-    margin: -60px 30px;
+    margin: -59px 35px;
   }
 
   .navbar .menu ul {
