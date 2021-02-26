@@ -1,0 +1,368 @@
+/* IMPORTO LAS FUENTES PARA LA WEB */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Permanent+Marker&display=swap");
+
+/* QUITO MARGENES Y ALINEACÓN DE TEXTO */
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+/* CUERPO DE LA WEB */
+body {
+  font-family: "Montserrat", sans-serif;
+  background: rgba(222, 74, 74, 1); /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    89.8deg,
+    rgba(222, 74, 74, 1) 4.7%,
+    rgba(30, 29, 29, 1) 120.3%
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    89.8deg,
+    rgba(222, 74, 74, 1) 4.7%,
+    rgba(30, 29, 29, 1) 120.3%
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* MENÚ DE NAVEGACIÓN */
+
+header {
+  width: 100%;
+}
+
+/* Este div contiene todo */
+.header .main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Barra de navegación - La despego de arriba*/
+.navbar {
+  margin-top: 30px;
+}
+
+.navbar .brand {
+  display: flex; /* Uno al lado del otro*/
+  margin: 15px 40px;
+  color: white;
+  font-size: 1.8em;
+}
+
+.navbar .brand i {
+  margin: 4px;
+  color: white;
+  font-size: 1.2em;
+}
+
+.menu ul {
+  display: flex; /* Uno al lado del otro*/
+  justify-content: flex-end;
+  margin: -50px 20px;
+}
+
+.menu ul li {
+  list-style: none;
+  margin-right: 70px;
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3em;
+}
+
+.menu ul li a:hover {
+  color: gold;
+}
+
+/* ICONO MENU MOVILE */
+.navbar .toggle-menu {
+  display: flex;
+  justify-content: flex-end; /* que se vaya al fondo */
+  margin-top: 24px;
+  font-size: 1.2em;
+}
+
+.navbar .toggle-menu i {
+  font-size: 1.5em; /* em se aplica directamente al elemento */
+  cursor: pointer;
+  color: white;
+  display: none; /* lo ocultamos hasta que se vea solo en movil */
+}
+
+/* MAQUETAMOS CONTENT INFO */
+
+.container-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.container-info h1 {
+  font-size: 5em;
+  margin-left: -100px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  animation: left-move 1s ease-in;
+}
+
+.container-info h2 {
+  font-size: 1.5em;
+  margin-left: -90px;
+  animation: right-move 1s ease-in;
+}
+
+.container-info .btn {
+  font-size: 1.3em;
+  margin-top: 10px;
+  margin-left: -90px;
+  width: 200px;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: gold;
+  border: none;
+  color: black;
+  animation: right-move 1s ease-in;
+}
+
+.container-info .img-content img {
+  max-width: 100%;
+  animation: up-move 1s ease-in;
+}
+
+.container-info .img-content img:hover {
+  filter: sepia(20%);
+}
+
+.container-info .social-content li {
+  list-style: none;
+  margin: 20px;
+  animation: left-move 1s ease-in;
+}
+
+.container-info .social-content i {
+  font-size: 1.3em;
+  color: gold;
+}
+
+.container-info .social-content i:hover {
+  transform: scale(1.5);
+}
+
+header .wave {
+  margin-top: -100px;
+}
+
+.our-products {
+  background-color: #fff;
+  height: 100vh;
+}
+
+/* CREAMOS MEDIA QUERY */
+/* Cuando la web se encuentre en un máximo de 570px van a suceder las 
+  siguientes cosas */
+
+@media (max-width: 670px) {
+  .navbar .brand i {
+    /* El logo de la web en versión móvil */
+    margin-left: -5px;
+  }
+
+  .navbar .toggle-menu i {
+    display: block;
+    margin: -60px 30px;
+  }
+
+  .navbar .menu ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* para que el menú se ponga arriba de lo que se encuentre */
+    /*background-color:(89.8deg,  rgba(222,74,74,1) 4.7%, rgba(30,29,29,1) 120.3%); /* para que sea del mismo color */
+    background-color: rgba(26, 18, 18, 0.733);
+    position: fixed;
+    margin-top: 1px;
+    transform: translateX(-120%);
+    transition: 1s ease-in;
+  }
+
+  .navbar .menu .menu-on {
+    transform: translateX(-4%);
+  }
+
+  .navbar .menu ul li {
+    margin: 45px;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  .container-info .social-content i {
+    /* Ocultar botones rrss al reducirse a móvil */
+    display: none;
+  }
+
+  /* Se sitúa el segundo elemento en primera posición al cambiar la vista a móvil*/
+  .container-info {
+    flex-wrap: wrap-reverse;
+    margin-top: -50px 50px;
+  }
+
+  .container-info h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-top: -60px;
+  }
+
+  .container-info h2 {
+    font-size: 1.4em;
+    text-align: center;
+    margin-left: 5px;
+    margin-bottom: 20px;
+  }
+
+  .container-info .btn {
+    font-size: 1.3em;
+    margin-top: 5px;
+    margin-left: -0px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: gold;
+    border: none;
+    color: black;
+    animation: right-move 1s ease-in;
+  }
+
+  .container-info .img-content img {
+    margin-top: 10px;
+    max-width: 90%;
+    margin-left: 21px;
+  }
+
+  header .wave {
+    /* Hasta aquí llega el blanco de la Wave */
+    margin-top: 100px;
+  }
+}
+
+/* ANIMACIONES*/
+
+@keyframes left-move {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); /* EJE X - HORIZONTAL*/
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px); /* EJE X - HORIZONTAL*/
+  }
+}
+
+@keyframes right-move {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); /* EJE X - HORIZONTAL*/
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px); /* EJE X - HORIZONTAL*/
+  }
+}
+
+@keyframes up-move {
+  0% {
+    opacity: 0;
+    transform: translateY(100px); /* EJE Y - VERTICAL */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); /* EJE Y - VERTICAL */
+  }
+}
+
+.products-section {
+  background-color: #fff;
+}
+.products-section .wrapper {
+  grid-column-start: 4;
+  grid-row-start: 4;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 60px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.product-card {
+  grid-column-start: span 1;
+  display: grid;
+  grid-template-rows: 240px auto auto;
+  grid-gap: 16px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.product-card-footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.product-category {
+  color: #333;
+  font-size: 12px;
+  font-weight: bold;
+}
+.product-name {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.product-description {
+  color: #333;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+  line-height: 1.3rem;
+}
+
+.product-rating {
+  color: #ebac01;
+  font-weight: bold;
+}
+.product-review {
+  font-size: 12px;
+  color: #555;
+  margin-top: 4px;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-wrapper button {
+  background-color: rgb(165, 44, 7);
+  color: #fff;
+  border: 0;
+  border-radius: 2px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Montserrat";
+  max-width: 160px;
+  width: 100%;
+}
+
+.fullHeight {
+  height: 100vh;
+}
